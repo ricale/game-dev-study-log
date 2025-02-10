@@ -2,6 +2,7 @@ import { getPostById, getAllPosts } from '~/lib/api';
 
 type Props = {
   params: { id: string }
+  searchParams?: { [key: string]: string | string[] | undefined }
 }
 const Post = async ({ params: { id } }: Props) => {
   const { html, title, date } = await getPostById(id);
