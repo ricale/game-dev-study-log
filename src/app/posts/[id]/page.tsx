@@ -1,10 +1,10 @@
 import { getPostById, getAllPosts } from '~/lib/api';
 
 type Props = {
-  params: { id: string }
-  searchParams?: { [key: string]: string | string[] | undefined }
+  params: Promise<{ id: string }>
 }
-const Post = async ({ params: { id } }: Props) => {
+const Post = async ({ params }: Props) => {
+  const { id } = await params;
   const { html, title, date } = await getPostById(id);
   return (
     <article>
@@ -25,7 +25,8 @@ export async function generateStaticParams() {
   }));
 }
  
-export async function generateMetadata({ params: { id } }: Props) {
+export async function generateMetadata({ params }: Props) {
+  const { id } = await params;
   const { title } = await getPostById(id);
   return {
     title,
