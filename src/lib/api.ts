@@ -41,7 +41,6 @@ function getParser() {
     });
 }
  
-// small speedup from caching this parser
 const parser = getParser();
  
 export async function getPostById(id: string) {
