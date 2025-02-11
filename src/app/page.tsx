@@ -9,10 +9,14 @@ const Page = async () => {
  
   return (
     <div className={styles.container}>
-      <h1>Game dev study log</h1>
+      <h1>Game Dev Study Log</h1>
+      <address>
+        by <a href="https://ricale.kr/blog" target="_blank">ricale</a>
+      </address>
+      <p>취미로 하는 게임 개발 공부 기록</p>
       <div>
         {posts.map(({ id, date, title, html }) => (
-          <div className={styles.post} key={id}>
+          <article className={styles.post} key={id}>
             <h2 className={styles.postTitle}>
               <Link href={`/posts/${id}`}>
                 {date}
@@ -25,7 +29,7 @@ const Page = async () => {
               className={styles.postContent}
               dangerouslySetInnerHTML={{ __html: html }}
             />
-          </div>
+          </article>
         ))}
       </div>
     </div>
