@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 import matter from 'gray-matter';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+// import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 // import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import rehypeStringify from 'rehype-stringify';
@@ -27,18 +27,18 @@ function getParser() {
     // })
     .use(rehypeStringify)
     .use(rehypeStringify)
-    .use(rehypeSlug)
-    .use(rehypeAutolinkHeadings, {
-      content: arg => ({
-        type: 'element',
-        tagName: 'a',
-        properties: {
-          href: `#${String(arg.properties?.id)}`,
-          style: 'margin-right: 10px',
-        },
-        children: [{ type: 'text', value: '#' }],
-      }),
-    });
+    .use(rehypeSlug);
+  // .use(rehypeAutolinkHeadings, {
+  //   content: arg => ({
+  //     type: 'element',
+  //     tagName: 'a',
+  //     properties: {
+  //       href: `#${String(arg.properties?.id)}`,
+  //       style: 'margin-right: 10px',
+  //     },
+  //     children: [{ type: 'text', value: '#' }],
+  //   }),
+  // });
 }
  
 const parser = getParser();
