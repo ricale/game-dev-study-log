@@ -3,44 +3,6 @@
   padding: 16px;
 }
 
-.post {
+.item {
   margin: 32px 0;
-  word-break: keep-all;
-}
-
-.postTitle {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px
-}
-
-.postContent {
-  padding: 0 16px;
-  line-height: 1.5;
-}
-
-.postContent a {
-  color: lightskyblue;
-}
-
-.postContent > * {
-  margin-top: 12px;
-  margin-bottom: 12px;
-}
-
-.postContent > hr {
-  margin-top: 24px;
-  margin-bottom: 24px;
-}
-
-.postContent ul {
-  margin-left: 16px;
-}
-
-.postContent ul li {
-  margin: 2px 0;
-}
-
-.postContent img {
-  max-width: 300px;
 }

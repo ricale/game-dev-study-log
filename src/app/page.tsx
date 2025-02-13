@@ -1,5 +1,4 @@
-import Link from 'next/link';
-
+import Article from '~/components/Article';
 import { getAllPosts } from '~/lib/api';
 
 import styles from './page.module.css';
@@ -15,21 +14,12 @@ const Page = async () => {
       </address>
       <p>취미로 하는 게임 개발 공부 기록</p>
       <div>
-        {posts.map(({ id, date, title, html }) => (
-          <article className={styles.post} key={id}>
-            <h2 className={styles.postTitle}>
-              <Link href={`/posts/${id}`}>
-                {date}
-              </Link>
-              <Link href={`/posts/${id}`}>
-                {title}
-              </Link>
-            </h2>
-            <div
-              className={styles.postContent}
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
-          </article>
+        {posts.map((post) => (
+          <Article
+            key={post.id}
+            className={styles.item}
+            data={post}
+          />
         ))}
       </div>
     </div>

@@ -1,0 +1,54 @@
+.post {
+  word-break: keep-all;
+}
+
+.postTitleRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.postDate {
+  line-height: 1;
+  white-space: pre-line;
+  color: #666;
+}
+
+.postTitle {
+  line-height: 1.2;
+  margin-top: 21.5px;
+}
+
+.postContent {
+  line-height: 1.5;
+}
+
+.postContent a {
+  color: lightskyblue;
+}
+
+.postContent > * {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.postContent > hr {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.postContent > ul {
+  margin-left: 20px;
+}
+
+.postContent > ul ul {
+  margin-left: 16px;
+}
+
+.postContent ul li {
+  margin: 2px 0;
+}
+
+.postContent img {
+  max-width: 300px;
+}

@@ -1,17 +1,19 @@
+import Article from '~/components/Article';
 import { getPostById, getAllPosts } from '~/lib/api';
+
+import styles from './page.module.css';
 
 type Props = {
   params: Promise<{ id: string }>
 }
 const Post = async ({ params }: Props) => {
   const { id } = await params;
-  const { html, title, date } = await getPostById(id);
+  const post = await getPostById(id);
   return (
-    <article>
-      <h1>{title}</h1>
-      <h4>{date}</h4>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
-    </article>
+    <Article
+      className={styles.item}
+      data={post}
+    />
   );
 };
 
