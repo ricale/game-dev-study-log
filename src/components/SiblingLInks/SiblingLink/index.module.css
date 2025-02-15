@@ -1,0 +1,9 @@
+.link {
+  padding: 16px;
+  user-select: none;
+  font-size: 1.125rem;
+}
+
+.disabled {
+  color: #666;
+}

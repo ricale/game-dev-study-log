@@ -1,4 +1,5 @@
 import Article from '~/components/Article';
+import SiblingLinks from '~/components/SiblingLInks';
 import { getPostById, getAllPosts } from '~/lib/api';
 
 import styles from './page.module.css';
@@ -8,12 +9,22 @@ type Props = {
 }
 const Post = async ({ params }: Props) => {
   const { id } = await params;
-  const post = await getPostById(id);
+
+  const posts = await getAllPosts();
+  const currentIndex = posts.findIndex(post => post.id === id);
+
+  const current = posts[currentIndex];
+  const prev = currentIndex > 0 ? posts[currentIndex - 1] : undefined;
+  const next = currentIndex < posts.length - 1 ? posts[currentIndex + 1] : undefined;
+
   return (
-    <Article
-      className={styles.item}
-      data={post}
-    />
+    <div>
+      <Article
+        className={styles.item}
+        data={current}
+      />
+      <SiblingLinks prev={prev} next={next}/>
+    </div>
   );
 };
 
