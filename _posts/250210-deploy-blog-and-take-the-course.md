@@ -9,6 +9,8 @@ date: 2025-02-10
 
 ---
 
+강의 수강: [Unity Turn-Based Strategy Game: Intermediate C# Coding](https://www.udemy.com/course/unity-turn-based-strategy/)
+
 "6. Reminder Of C# Fundamentals (15:02)" 강의를 들었다.
 
 해당 강의는 C# 의 기초 문법과 Unity 의 라이프 사이클 함수에 대한 *리마인드* 를 했다.

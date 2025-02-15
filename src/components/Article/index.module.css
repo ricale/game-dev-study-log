@@ -10,13 +10,11 @@
 
 .postDate {
   line-height: 1;
-  white-space: pre-line;
   color: #666;
 }
 
 .postTitle {
-  line-height: 1.2;
-  margin-top: 21.5px;
+  line-height: 1;
 }
 
 .postContent {
