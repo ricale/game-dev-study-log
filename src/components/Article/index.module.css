@@ -56,3 +56,9 @@
 .postContent img {
   max-width: 300px;
 }
+
+.postContent blockquote {
+  padding-left: 16px;
+  color: #999;
+  border-left: 3px solid #999;
+}
