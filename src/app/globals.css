@@ -1,12 +1,18 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --post-link: dodgerblue;
+  --post-blockquote: #878787;
+  --disabled: #DDDDDD;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --post-link: lightskyblue;
+    --post-blockquote: #9d9d9d;
+    --disabled: #666666;
   }
 }
 
