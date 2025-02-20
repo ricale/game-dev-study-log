@@ -1,4 +1,5 @@
 import Article from '~/components/Article';
+import Header from '~/components/Header/indext';
 import SiblingLinks from '~/components/SiblingLInks';
 import { getPostById, getAllPosts } from '~/lib/api';
 
@@ -18,7 +19,8 @@ const Post = async ({ params }: Props) => {
   const next = currentIndex < posts.length - 1 ? posts[currentIndex + 1] : undefined;
 
   return (
-    <div>
+    <div className={styles.container}>
+      <Header />
       <Article
         className={styles.item}
         data={current}

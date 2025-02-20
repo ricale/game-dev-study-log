@@ -5,5 +5,5 @@
 }
 
 .disabled {
-  color: #666;
+  color: var(--disabled);
 }
