@@ -20,16 +20,16 @@ const Article = ({ className: _className, data }: Props) => {
     <article className={className} key={data.id}>
       <h2>
         <Link className={styles.postTitleRow} href={`/posts/${data.id}`}>
-          <div className={styles.postDate}>
+          <span className={styles.postDate}>
             {dateString}
-          </div>
-          <div className={styles.postTitle}>
+          </span>
+          <span>
             {data.title}
-          </div>
+          </span>
         </Link>
       </h2>
       <div
-        className={styles.postContent}
+        className={`markdown-body ${styles.postContent}`}
         dangerouslySetInnerHTML={{ __html: data.html }}
       />
     </article>

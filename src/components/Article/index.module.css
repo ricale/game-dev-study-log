@@ -7,58 +7,14 @@
   align-items: flex-start;
   gap: 8px;
   margin-bottom: 32px;
-  /* border-bottom: 1px solid #6666; */
-  /* padding-bottom: 4px; */
+  padding-bottom: 7.2px;
+  border-bottom: 1px solid #333;
 }
 
 .postDate {
-  line-height: 1;
   font-family: 'Courier New', monospace;
-  font-weight: 400;
 }
 
-.postTitle {
-  line-height: 1;
-}
-
-.postContent {
-  line-height: 1.5;
-}
-
-.postContent a {
-  color: var(--post-link);
-}
-
-.postContent > * {
-  margin-top: 12px;
-  margin-bottom: 12px;
-}
-
-.postContent > hr {
-  margin-top: 16px;
-  margin-bottom: 16px;
-  border-width: 0.5px;
-  border-style: dashed;
-}
-
-.postContent > ul {
-  margin-left: 20px;
-}
-
-.postContent > ul ul {
-  margin-left: 16px;
-}
-
-.postContent ul li {
-  margin: 2px 0;
-}
-
-.postContent img {
-  max-width: 300px;
-}
-
-.postContent blockquote {
-  padding-left: 16px;
-  color: var(--post-blockquote);
-  border-left: 3px solid var(--post-blockquote);
+.post > .postContent {
+  background-color: transparent;
 }
