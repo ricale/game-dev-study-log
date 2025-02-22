@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@leafac/rehype-shiki": "^2.2.1",
+    "github-markdown-css": "^5.8.1",
     "gray-matter": "^4.0.3",
     "next": "15.1.6",
     "react": "^19.0.0",
