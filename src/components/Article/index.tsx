@@ -9,7 +9,7 @@ type Props = {
   data: Post;
 }
 const Article = ({ className: _className, data }: Props) => {
-  const className = `${styles.post}${_className ? ` ${_className}` : ''}`;
+  const className = `markdown-body ${styles.post}${_className ? ` ${_className}` : ''}`;
 
   const year = +data.date.slice(0, 4) % 100;
   const month = data.date.slice(5, 7);
@@ -18,18 +18,12 @@ const Article = ({ className: _className, data }: Props) => {
 
   return (
     <article className={className} key={data.id}>
-      <h2>
-        <Link className={styles.postTitleRow} href={`/posts/${data.id}`}>
-          <span className={styles.postDate}>
-            {dateString}
-          </span>
-          <span>
-            {data.title}
-          </span>
+      <h1 className={styles.title}>
+        <Link href={`/posts/${data.id}`}>
+          {`${dateString} ${data.title}`}
         </Link>
-      </h2>
+      </h1>
       <div
-        className={`markdown-body ${styles.postContent}`}
         dangerouslySetInnerHTML={{ __html: data.html }}
       />
     </article>

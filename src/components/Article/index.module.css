@@ -1,20 +1,14 @@
 .post {
   word-break: keep-all;
-}
-
-.postTitleRow {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  margin-bottom: 32px;
-  padding-bottom: 7.2px;
-  border-bottom: 1px solid #333;
-}
-
-.postDate {
-  font-family: 'Courier New', monospace;
-}
-
-.post > .postContent {
   background-color: transparent;
+}
+
+.title > a {
+  color: inherit;
+}
+
+.post > h1 {
+  position: sticky;
+  top: 40px;
+  background-color: var(--background);
 }
