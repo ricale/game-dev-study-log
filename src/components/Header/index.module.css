@@ -5,7 +5,8 @@
 
   display: flex;
   gap: 8px;
-
+  
+  height: 42px;
   padding-top: 16px;
   background-color: var(--background);
 }

@@ -9,5 +9,8 @@
   "[markdown]": {
     "editor.defaultFormatter": null,
     "editor.codeActionsOnSave": {}
+  },
+  "[css]": {
+    "editor.tabSize": 2
   }
 }
