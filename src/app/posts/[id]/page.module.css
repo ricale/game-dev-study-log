@@ -1,8 +1,10 @@
 .container {
-  max-width: 800px;
-  padding: 16px;
+  height: 100vh;
+  overflow: auto;
+  padding: 0 16px;
 }
 
 .item {
+  max-width: 800px;
   margin: 64px 0;
 }

@@ -1,5 +1,5 @@
 import Article from '~/components/Article';
-import Header from '~/components/Header/indext';
+import Header from '~/components/Header';
 import { getAllPosts } from '~/lib/api';
 
 import styles from './page.module.css';

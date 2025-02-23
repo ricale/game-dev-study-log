@@ -3,7 +3,7 @@ title: "VS Code intelliSense 이슈 해결 + 강의 13강 수강"
 date: 2025-02-16
 ---
 
-### \#1
+## \#1
 
 강의에서 C# 스크립트를 수정하기 시작했는데 VS Code 에서 여전히 Unity 코드의 자동 완성 기능이 동작하지 않아서, 답답해서 강의를 멈추고 찾아봤다.
 
@@ -25,11 +25,11 @@ date: 2025-02-16
 재설치한 후에는 뭔가 알 수 없는 에러가 떠서 깔끔하게 재부팅을 했고, 재부팅 후에는 Unity 코드들의 자동 완성 및 타입 추론이 잘 되는 것을 확인할 수 있었다.
 
 
-### \#2
+## \#2
 
 강의 수강: [Unity Turn-Based Strategy Game: Intermediate C# Coding](https://www.udemy.com/course/unity-turn-based-strategy/)
 
-#### 13. Unit Move (08:01)
+### 13. Unit Move (08:01)
 
 - 캐릭터를 특정 지정으로 움직이기 위한 C# 스크립트 작성
 - 현재 씬뷰와 동일하게 카메라 위치 조정: cmd + shift + f (GameObject - Align With View)

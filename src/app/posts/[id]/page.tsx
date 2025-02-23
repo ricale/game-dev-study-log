@@ -1,5 +1,5 @@
 import Article from '~/components/Article';
-import Header from '~/components/Header/indext';
+import Header from '~/components/Header';
 import SiblingLinks from '~/components/SiblingLInks';
 import { getPostById, getAllPosts } from '~/lib/api';
 
