@@ -13,10 +13,6 @@ import { unified } from 'unified';
  
 const postsDirectory = path.join(process.cwd(), '_posts');
  
-function getPostFiles() {
-  return fs.readdirSync(postsDirectory);
-}
- 
 function getParser() {
   return unified()
     .use(remarkParse)
@@ -42,39 +38,53 @@ function getParser() {
 }
  
 const parser = getParser();
- 
-export async function getPostById(id: string) {
-  const realId = id.replace(/\.md$/, '');
-  const fullPath = path.join(postsDirectory, `${realId}.md`);
-  const { data, content } = matter(await fs.promises.readFile(fullPath, 'utf8'));
- 
+
+async function getFileData(dir: string, fileName: string) {
+  const filePath = path.join(dir, fileName);
+  const {
+    data: { title, date, ...data },
+    content,
+  } = matter(await fs.promises.readFile(filePath, 'utf8'));
   const html = await parser.process(content);
-  const date = data.date as Date;
- 
+
   return {
     ...data,
-    title: data.title as string,
-    id: realId,
-    date: `${date.toISOString().slice(0, 10)}`,
+    title: title as string,
+    id: fileName.replace(/\.md$/, ''),
+    date: `${(date as Date).toISOString().slice(0, 10)}`,
     html: html.value.toString(),
   };
 }
- 
-export async function getPageMarkdown(string_: string) {
-  const { data, content } = matter(
-    fs.readFileSync(path.join('_pages', string_), 'utf8'),
+
+type FileData = Awaited<ReturnType<typeof getFileData>>;
+
+const isMdFile = (filename: string) => !!filename.match(/\.md$/);
+
+async function getPostFiles(dir: string): Promise<FileData[]> {
+  const fileOrDirs = fs.readdirSync(dir);
+  const fileNames = fileOrDirs.filter(itemName => isMdFile(itemName));
+  const filesResult = await Promise.all(
+    fileNames.map(async (fileName) => getFileData(dir, fileName)),
   );
-  const html = await parser.process(content);
- 
-  return {
-    ...data,
-    html: html.value.toString(),
-  };
+  const dirNames = fileOrDirs.filter(itemName => !isMdFile(itemName));
+  const dirsResult = await Promise.all(
+    dirNames.map(async dirName => getPostFiles(path.join(dir, dirName))),
+  );
+
+  return [
+    ...filesResult,
+    ...dirsResult.flat(),
+  ];
+}
+
+export async function getPostById(id: string) {
+  // NOTE(kangseong): 파일 이름 형식은 `${postsDirectory}/yymm/yymmdd-some-file-name.md` 일 것이라 가정
+  return await getFileData(path.join(postsDirectory, id.slice(0, 4)), `${id}.md`);
 }
  
 export async function getAllPosts() {
-  const posts = await Promise.all(getPostFiles().map(id => getPostById(id)));
+  const posts = await getPostFiles(postsDirectory);
   return posts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
 }
 
-export type Post = Awaited<ReturnType<typeof getPostById>>;
+export type Post = FileData;
