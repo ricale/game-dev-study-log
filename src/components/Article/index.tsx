@@ -11,18 +11,16 @@ type Props = {
 const Article = ({ className: _className, data }: Props) => {
   const className = `markdown-body ${styles.post}${_className ? ` ${_className}` : ''}`;
 
-  const year = +data.date.slice(0, 4) % 100;
-  const month = data.date.slice(5, 7);
-  const day = data.date.slice(8);
-  const dateString = `${year}${month}${day}`;
-
   return (
     <article className={className} key={data.id}>
-      <h1 className={styles.title}>
+      <div className={styles.titleRow}>
+        <span className={styles.date}>{data.date.replace(/-/g, '.')}</span>
         <Link href={`/posts/${data.id}`}>
-          {`${dateString} ${data.title}`}
+          <h1>
+            {data.title}
+          </h1>
         </Link>
-      </h1>
+      </div>
       <div
         dangerouslySetInnerHTML={{ __html: data.html }}
       />

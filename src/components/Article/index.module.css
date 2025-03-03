@@ -3,12 +3,23 @@
   background-color: transparent;
 }
 
-.title > a {
+.titleRow {
+  position: sticky;
+  top: 40px;
+  margin-bottom: 16px;
+  background-color: var(--background);
+}
+
+.titleRow > a {
   color: inherit;
 }
 
-.post > h1 {
-  position: sticky;
-  top: 40px;
-  background-color: var(--background);
+.titleRow > a > h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.titleRow > .date {
+  font-family: monospace;
+  font-size: 0.875rem;
 }
