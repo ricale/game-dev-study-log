@@ -13,7 +13,7 @@ const SiblingLinks = ({ prev, next }: Props) => {
   return (
     <div className={styles.container}>
       <SiblingLink id={prev?.id} label='<<<' />
-      <Link className={styles.link} href="/">☰</Link>
+      <Link className={styles.link} href="/posts">☰</Link>
       <SiblingLink id={next?.id} label='>>>' />
     </div>
   );
