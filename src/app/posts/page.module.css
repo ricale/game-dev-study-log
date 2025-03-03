@@ -1,0 +1,43 @@
+.container {
+  height: 100vh;
+  overflow: auto;
+  padding: 0 16px;
+}
+
+.list {
+  max-width: 800px;
+  list-style: none;
+  margin: 32px 0;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;  
+  font-size: 1.125rem;
+}
+
+@media (max-width: 768px) {
+  .item {
+    flex-direction: column;
+  } 
+}
+
+.date {
+  font-family: monospace;
+  font-size: 0.875rem;
+  margin-top: 2.5px;
+  margin-right: 4px;
+  color: gray;
+}
+
+@media (max-width: 768px) {
+  .date {
+    margin-top: 0;
+    margin-right: 0;
+  } 
+}
+
+.title:hover {
+  text-decoration: underline;
+}
