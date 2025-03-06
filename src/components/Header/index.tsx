@@ -16,7 +16,7 @@ const Header = ({ className }: Props) => {
         by <a href="https://ricale.kr/blog" target="_blank">ricale</a>
         </address>
       </div>
-      <p>취미로 하는 게임 개발 공부 기록</p>
+      <p className={styles.description}>취미로 하는 게임 개발 공부</p>
     </>
   );
 };
