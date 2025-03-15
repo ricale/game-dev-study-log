@@ -21,7 +21,7 @@ function getParser() {
     // .use(rehypePrettyCode, {
     //   theme: 'one-dark-pro',
     // })
-    .use(rehypeStringify)
+    // .use(rehypeStringify)
     .use(rehypeStringify)
     .use(rehypeSlug);
   // .use(rehypeAutolinkHeadings, {
