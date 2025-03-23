@@ -1,6 +1,6 @@
 ---
 title: "강의 66,67강 수강 중"
-date: 2025-03-20
+date: 2025-03-21
 ---
 
 강의 수강: [Unity Turn-Based Strategy Game: Intermediate C# Coding](https://www.udemy.com/course/unity-turn-based-strategy/)
